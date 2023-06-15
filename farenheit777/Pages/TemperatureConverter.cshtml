@@ -1,0 +1,21 @@
+﻿@page
+@model farenheit777.Pages.TemperatureConverterModel
+@{
+    ViewData["Title"] = "Temperature Converter";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post" asp-page-handler="Convert">
+    <div class="form-group">
+        <label for="celsiusInput">Enter a value in degrees Celsius:</label>
+        <input type="text" id="celsiusInput" name="Celsius" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Convert</button>
+</form>
+
+@if (Model.Result.HasValue)
+{
+    <h2>In Fahrenheit: @Model.Result.Value</h2>
+}
+
